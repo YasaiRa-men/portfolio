@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ</title>
+    <link rel="stylesheet" href="index.css">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+    <div id="htmlbody">
+        <div id="maintitle"><span class="textstroke">-My Portfolio-</span></div>
+
+        <br><br><br><br>
+
+        <h3 class="textlightgray marginleft leftscrollAni">ここでは、私の紹介をします。</h3>
+        <h3 class="textlightgray marginleft leftscrollAni">よろしくお願いいたします。</h3>
+
+        <br><br><br><br>
+
+        <div id="mainList">～目次～<br>(クリックでその項目までとべます)
+            <div id="mainList1" class="lightgray mokuji" onclick="Tomaintitle1()">1. 自己紹介</div>
+            <div id="mainList2" class="darkgray mokuji" onclick="Tomaintitle2()">2. 経験した技術</div>
+            <div id="mainList3" class="lightgray mokuji" onclick="Tomaintitle3()">3. これまでに制作したもの</div>
+        </div>
+
+        <br><br><br><br>
+
+        <div id="maintitle1" class="beforescroll js-scrollAni">
+            <h2 class="subtitle">1. 自己紹介</h2>
+            <div id="prodiv">
+            <b>
+                <div id="propic">
+                    <img src="img/proimg.jpg" width="100%">
+                </div>
+                <p id="proname">高専 太郎(仮)</p>
+                <p id="proschool">大阪公立大学工業高等専門学校</p>
+                <p id="proclass">4年　メカトロニクスコース</p>
+                <div id="line1"></div>
+                <div id="line2"></div>
+                <div id="line3"></div>
+                <div id="line4"></div>
+            </b>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="commandList beforescroll js-scrollAni">
+            <div class="firstcommandLine">
+                History.txt
+                <img src="img/copy.png" id="copyicon" onclick="Copy()">
+                <p id="copytext">Copied!</p>
+            </div>
+            <span id="commandtext">
+                #2020年    
+                <div class="tabtext">
+                    4月：高専に入学
+                    <br>
+                    6月：旋盤による切削を体験する
+                </div>
+                <br>
+                #2021年
+                <div class="tabtext">
+                    7月：C言語に初めて触れる
+                </div>
+                <br>
+                #2022年
+                <div class="tabtext">
+                    6月：HTML、CSSに独学で触れ始める
+                    <br>
+                    7月：Javascriptにも触り始める
+                </div>
+                <br>
+                #2023年
+                <div class="tabtext">
+                    8,9月：インターンシップで実習を受ける
+                </div>
+            </span>
+        </div>
+
+        <br><br><br><br>
+
+        <h3 class="textlightgray marginleft leftscrollAni">私は主にIT系に興味があります。</h3>
+        <h3 class="textlightgray marginleft leftscrollAni">過去にこのようなプログラミング言語・ソフトウェア等に触れたことがあります。</h3>
+
+        <br><br><br><br>
+
+        <div id="maintitle2" class="beforescroll js-scrollAni">
+            <h2 class="subtitle">2. 経験した技術</h2>
+            <div id="programlist">
+                <!--<div id="programlist[number]" class="maintitle2flame"></div>を書くと自動的に場所が割り当てられる-->
+                <div id="programlist1" class="languageflame">
+                    <img src="img/html.png" class="programimg">
+                    <h4 class="programtitle">HTML</h4>
+                    <p class="programtext">-主な使用例-<br>・Web制作</p>
+                </div>
+                <div id="programlist2" class="languageflame">
+                    <img src="img/css.png" class="programimg">
+                    <h4 class="programtitle">CSS</h4>
+                    <p class="programtext">-主な使用例-<br>・HTMLとの連携</p>
+                </div>
+                <div id="programlist3" class="languageflame">
+                    <img src="img/js.png" class="programimg">
+                    <h4 class="programtitle">JavaScript</h4>
+                    <p class="programtext">-主な使用例-<br>・HTMLとの連携<br>・node.js<br>でのゲーム制作</p>
+                </div>
+                <div id="programlist4" class="languageflame">
+                    <img src="img/python.png" class="programimg">
+                    <h4 class="programtitle">Python</h4>
+                    <p class="programtext">-主な使用例-<br>・Tkinterでの<br>ゲーム制作<br>・機械学習</p>
+                </div>
+                <div id="programlist5" class="languageflame">
+                    <img src="img/c.png" class="programimg">
+                    <h4 class="programtitle">C</h4>
+                    <p class="programtext">-主な使用例-<br>・学校での学習</p>
+                </div>
+                <div id="programlist6" class="languageflame">
+                    <img src="img/c++.png" class="programimg">
+                    <h4 class="programtitle">C++</h4>
+                    <p class="programtext">-主な使用例-<br>・DxLibでの<br>ゲーム制作<br>・M5Stack</p>
+                </div>
+                <div id="programlist7" class="languageflame">
+                    <img src="img/arduino.png" class="programimg">
+                    <h4 class="programtitle">Arduino</h4>
+                    <p class="programtext">-主な使用例-<br>・プログラム</p>
+                </div>
+                <div id="programlist8" class="languageflame">
+                    <img src="img/tinkercad.png" class="programimg">
+                    <h4 class="programtitle">Tinkercad</h4>
+                    <p class="programtext">-主な使用例-<br>・機械設計<br>・回路設計</p>
+                </div>
+                <div id="programlist9" class="languageflame">
+                    <img src="img/creo4.png" class="programimg">
+                    <h4 class="programtitle">Creo4</h4>
+                    <p class="programtext">-主な使用例-<br>・機械設計</p>
+                </div>
+                <div id="programlist10" class="languageflame">
+                    <img src="img/kicad.png" class="programimg">
+                    <h4 class="programtitle">KiCad</h4>
+                    <p class="programtext">-主な使用例-<br>・回路設計</p>
+                </div>
+            </div>
+        </div>
+
+        <br><br><br><br>
+
+        <div id="maintitle3" class="beforescroll js-scrollAni">
+            <h2 class="subtitle">3. これまでに制作したもの</h2>
+        </div>
+        
+        <div class="beforecreatescroll js-scrollAni">
+            <h2 class="createtitle">・Minecraftを使用しての校内の再現</h2>
+            <div class="createexplanation">
+                <div class="createmaindiv">
+                    <div class="gradation"></div>
+                    <img src="img/factory-center.png" class="picfit">
+                    <p class="ingradationtext">
+                        数年後、移転するため校舎が取り壊される。
+                        <br>そこで、
+                        <br>「公大高専の校舎をゲーム『Minecraft』で再現し、後世に残す。」
+                        <br>というコンセプトで、10人のチームで行った。
+                        <br>
+                        <br>私は校内の東のエリアを担当することになり、
+                        <br>工場棟、地域連携テクノセンター、図書館を制作した。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--
+        <div id="minecraft1" class="beforescroll js-scrollAni">
+            <img src="img/infomation-center.png" width="60%">
+            <p>a</p>
+        </div>
+        -->
+
+        <div class="createexplanation beforecreatescroll js-scrollAni">
+            <h2 class="createtitle">・Tkinterでのゲーム制作</h2>
+            <div class="createexplanation">
+                <div class="createmaindiv">
+                    <div class="gradation"></div>
+                    <img src="img/ads.png" class="picfit">
+                    <p class="ingradationtext">
+                        実験実習で、Pythonの「Tkinter」というライブラリを学習した。
+                        <br>
+                        <br>自由課題でTkinterを使用し、
+                        <br>Windows上で遊ぶことができすものを作成した。
+                        <br>
+                        <br>私は、「Window Busters」という
+                        <br>Tkinterによって作成されたウィンドウを素早く消すゲームを制作した。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="createexplanation beforecreatescroll js-scrollAni">
+            <h2 class="createtitle">・チームでのプロジェクト</h2>
+            <div class="createexplanation">
+                <div class="createmaindiv">
+                    <div class="gradation"></div>
+                    <img src="img/sushinetack1.png" class="picfit">
+                    <p class="ingradationtext">
+                        クラスのプロジェクトにて、
+                        <br>「とある回転寿司屋で、『古い寿司が流れている』
+                        <br>という風評被害を受け、経営の危機に陥ってしまった。
+                        <br>そこで、回転寿司屋のDX化を行うとともに、
+                        <br>寿司の衛生管理を徹底し、経営を回復させる」
+                        <br>
+                        <br>というコンセプトで、5人のチームで制作を行った。
+                        <br>私はM5Stackを使用し、寿司のオーダーと寿司の周回判定を制作した。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <br><br><br><br>
+
+        <div id="upmenu">
+            <div id="Displaymenu"></div>
+        </div>
+        <div id="under" onclick="ToHome()">
+            トップに戻る
+            <div id="underbar"></div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
