@@ -155,3 +155,30 @@ function CreatemainList() {
 }
 
 CreatemainList();
+
+const clickEvents = document.querySelectorAll(".click-event");
+
+clickEvents.forEach(function(element, index) {
+    element.addEventListener("click", function() {
+        console.log(element); // クリックされた要素
+        console.log(index); // 要素のインデックス
+        htmlmenu.insertAdjacentHTML("afterbegin", '<iframe id="htmliframe" src="index.3_'+index+'.html"></iframe>');
+        menuback.style.display = "block";
+
+        document.addEventListener("scroll", Backmenu);
+        backtomenu.addEventListener("click", Backmenu);
+        backmenuflag = true;
+    });
+});
+
+let backmenuflag = false;
+function Backmenu() {
+    if (backmenuflag) {
+        htmliframe.remove();
+        menuback.style.display = "none";
+
+        document.removeEventListener("scroll", Backmenu);
+        backtomenu.removeEventListener("click", Backmenu);
+        backmenuflag = false;
+    }
+}
