@@ -13,8 +13,8 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 <body>
-    <div id="htmlbody">
-        <div id="maintitle"><span class="textstroke">-My Portfolio-</span></div>
+    <div id="pageContainer">
+        <div id="portfolioTitle"><span class="titleStroke">-My Portfolio-</span></div>
 
         <br><br><br><br>
 
@@ -23,15 +23,15 @@
 
         <br><br><br><br>
 
-        <div id="mainList">～目次～<br>(クリックでその項目までとべます)
-            <div id="mainList1" class="lightgray mokuji" onclick="Tomaintitle1()">1. 自己紹介</div>
-            <div id="mainList2" class="darkgray mokuji" onclick="Tomaintitle2()">2. 経験した技術</div>
-            <div id="mainList3" class="lightgray mokuji" onclick="Tomaintitle3()">3. これまでに制作したもの</div>
+        <div id="tableOfContents">～目次～<br>(クリックでその項目までとべます)
+            <div id="tableOfContents1" class="lightgray mokuji" onclick="scrollToIntroduction()">1. 自己紹介</div>
+            <div id="tableOfContents2" class="darkgray mokuji" onclick="scrollToSkills()">2. 経験した技術</div>
+            <div id="tableOfContents3" class="lightgray mokuji" onclick="scrollToProjects()">3. これまでに制作したもの</div>
         </div>
 
         <br><br><br><br>
 
-        <div id="maintitle1" class="beforescroll js-scrollAni">
+        <div id="sectionIntroduction1" class="beforescroll js-scrollAni">
             <h2 class="subtitle">1. 自己紹介</h2>
             <div id="prodiv">
             <b>
@@ -54,7 +54,7 @@
         <div class="commandList beforescroll js-scrollAni">
             <div class="firstcommandLine">
                 History.txt
-                <img src="img/copy.png" id="copyicon" onclick="Copy()">
+                <img src="img/copy.png" id="copyicon" onclick="copyToClipboard()">
                 <p id="copytext">Copied!</p>
             </div>
             <span id="commandtext">
@@ -93,10 +93,10 @@
 
         <br><br><br><br>
 
-        <div id="maintitle2" class="beforescroll js-scrollAni">
+        <div id="sectionIntroduction2" class="beforescroll js-scrollAni">
             <h2 class="subtitle">2. 経験した技術</h2>
             <div id="programlist">
-                <!--<div id="programlist[number]" class="maintitle2flame"></div>を書くと自動的に場所が割り当てられる-->
+                <!--<div id="programlist[number]" class="sectionIntroduction2flame"></div>を書くと自動的に場所が割り当てられる-->
                 <div id="programlist1" class="languageflame">
                     <img src="img/html.png" class="programimg">
                     <h4 class="programtitle">HTML</h4>
@@ -152,7 +152,7 @@
 
         <br><br><br><br>
 
-        <div id="maintitle3" class="beforescroll js-scrollAni">
+        <div id="sectionIntroduction3" class="beforescroll js-scrollAni">
             <h2 class="subtitle">3. これまでに制作したもの</h2>
         </div>
         
@@ -171,7 +171,7 @@
                         <br>私は校内の東のエリアを担当することになり、
                         <br>工場棟、地域連携テクノセンター、図書館を制作した。
                     </p>
-                    <p class="click-event">詳細を見る</p>
+                    <p class="detailButton">詳細を見る</p>
                 </div>
             </div>
         </div>
@@ -198,7 +198,7 @@
                         <br>私は、「Window Busters」という
                         <br>Tkinterによって作成されたウィンドウを素早く消すゲームを制作した。
                     </p>
-                    <p class="click-event">詳細を見る</p>
+                    <p class="detailButton">詳細を見る</p>
                 </div>
             </div>
         </div>
@@ -219,7 +219,7 @@
                         <br>というコンセプトで、5人のチームで制作を行った。
                         <br>私はM5Stackを使用し、寿司のオーダーと寿司の周回判定を制作した。
                     </p>
-                    <p class="click-event">詳細を見る</p>
+                    <p class="detailButton">詳細を見る</p>
                 </div>
             </div>
         </div>
@@ -239,7 +239,7 @@
                         <br>企画、プログラミング、デザイン、BGM全てを私一人が担当しており、
                         <br>友達にテストプレイしながら現在も制作を続けています。
                     </p>
-                    <p class="click-event">詳細を見る</p>
+                    <p class="detailButton">詳細を見る</p>
                 </div>
             </div>
         </div>
@@ -253,15 +253,15 @@
 
         <br><br><br><br>
 
-        <div id="upmenu">
+        <div id="navigationMenu">
             <div id="Displaymenu"></div>
         </div>
-        <div id="menuback">
-            <div id="htmlmenu">
+        <div id="modalBackground">
+            <div id="modalContent">
                 <div id="backtomenu">戻る</div>
             </div>
         </div>
-        <div id="under" onclick="ToHome()">
+        <div id="backToTopButton" onclick="scrollToTop()">
             トップに戻る
             <div id="underbar"></div>
         </div>
