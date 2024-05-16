@@ -1,7 +1,7 @@
 //アニメーションさせたい要素
-const targets = document.querySelectorAll(".js-scrollAni");
-const lefttargets = document.querySelectorAll(".leftscrollAni");
-const focustargets = document.querySelectorAll(".Displaymenutext");
+const scrollTargets = document.querySelectorAll(".js-scrollAni");
+const leftSlideTargets = document.querySelectorAll(".leftscrollAni");
+const focusTargets = document.querySelectorAll(".focusText");
 
 
 //アニメーションタイミング
@@ -9,11 +9,11 @@ const offset = 100;
 
 let beforetarget;
 //スクロールしたときのイベント
-function ScrollEvent() {
+function handleScroll() {
     let scroll = window.scrollY;
     let h = window.innerHeight;
 
-    for(let target of targets) {
+    for(let target of scrollTargets) {
         //アニメーションさせたい要素の位置を取得
         let pos = target.getBoundingClientRect().top + scroll;
 
@@ -25,7 +25,7 @@ function ScrollEvent() {
         }
     }
 
-    for(let target of lefttargets) {
+    for(let target of leftSlideTargets) {
         //アニメーションさせたい要素の位置を取得
         let pos = target.getBoundingClientRect().top + scroll;
 
@@ -37,56 +37,56 @@ function ScrollEvent() {
         }
     }
 
-    if (document.getElementById("mainList").getBoundingClientRect().bottom < 0) {
-        document.querySelector("#upmenu").classList.add("is-upmenu-animated");
+    if (document.getElementById("tableOfContents").getBoundingClientRect().bottom < 0) {
+        document.querySelector("#navigationMenu").classList.add("is-navigationMenu-animated");
     } else {
-        document.querySelector("#upmenu").classList.remove("is-upmenu-animated");
+        document.querySelector("#navigationMenu").classList.remove("is-navigationMenu-animated");
     }
 
     let i = 1;
     const menuoffset = 200;
     while (true) {
         if (document.getElementById("Focus" + i) == null) break;
-        let upmenutarget = document.getElementById("Focus" + i);
-        if (document.getElementById("maintitle" + i).getBoundingClientRect().top < upmenutarget.getBoundingClientRect().bottom + menuoffset) {
-            upmenutarget.classList.add("focus");
-            if (beforetarget != null && upmenutarget != beforetarget) beforetarget.classList.remove("focus");
-            beforetarget = upmenutarget;
+        let navigationMenutarget = document.getElementById("Focus" + i);
+        if (document.getElementById("sectionIntroduction" + i).getBoundingClientRect().top < navigationMenutarget.getBoundingClientRect().bottom + menuoffset) {
+            navigationMenutarget.classList.add("focus");
+            if (beforetarget != null && navigationMenutarget != beforetarget) beforetarget.classList.remove("focus");
+            beforetarget = navigationMenutarget;
         }
         i++;
     }
 }
 
-ScrollEvent();
+handleScroll();
 
-window.addEventListener("scroll", ScrollEvent);
+window.addEventListener("scroll", handleScroll);
 
-function SmoothScroll(targetelemheight) {
+function smoothScrollTo(height) {
     window.scrollTo({
-        top: targetelemheight,
+        top: height,
         behavior: "smooth"
     });
 }
 
 const offsetY = 70;
 
-function ToHome() {
-    SmoothScroll(0);
+function scrollToTop() {
+    smoothScrollTo(0);
 }
 
-function Tomaintitle1() {
-    const targetheight = document.getElementById("maintitle1").offsetTop - offsetY;
-    SmoothScroll(targetheight);
+function scrollToIntroduction() {
+    const targetheight = document.getElementById("sectionIntroduction1").offsetTop - offsetY;
+    smoothScrollTo(targetheight);
 }
 
-function Tomaintitle2() {
-    const targetheight = document.getElementById("maintitle2").offsetTop - offsetY;
-    SmoothScroll(targetheight);
+function scrollToSkills() {
+    const targetheight = document.getElementById("sectionIntroduction2").offsetTop - offsetY;
+    smoothScrollTo(targetheight);
 }
 
-function Tomaintitle3() {
-    const targetheight = document.getElementById("maintitle3").offsetTop - offsetY;
-    SmoothScroll(targetheight);
+function scrollToProjects() {
+    const targetheight = document.getElementById("sectionIntroduction3").offsetTop - offsetY;
+    smoothScrollTo(targetheight);
 }
 
 const copytext = document.getElementById("copytext");
@@ -94,7 +94,7 @@ copytext.style.opacity = 0;
 
 let opcityTime;
 let intervalTime;
-function Copy() {
+function copyToClipboard() {
     clearTimeout(opcityTime); 
     clearInterval(intervalTime);  
 
@@ -102,10 +102,10 @@ function Copy() {
 
     navigator.clipboard.writeText(text)
     .then(() => {
-        console.log('Text copied to clipboard');
+        console.log("Text copied to clipboard");
     })
     .catch((error) => {
-        console.error('Error in copying text: ', error);
+        console.error("Error in copying text: ", error);
     });
 
     copytext.style.opacity = 1;
@@ -119,7 +119,7 @@ function Copy() {
     }, 1500);
 }
 
-function ProgramList() {
+function layoutSkillsList() {
     let i = 1;
     while (true) {
         let targetelem = document.getElementById("programlist" + i);
@@ -130,55 +130,55 @@ function ProgramList() {
             targetelem.style.right = "0px";
         }
         i++;
-        targetelem.style.top = document.getElementById("htmlbody").offsetWidth >= 800 ?
+        targetelem.style.top = document.getElementById("pageContainer").offsetWidth >= 800 ?
         240 * (Math.floor(i/2) - 1) + "px" : 30 * (Math.floor(i/2) - 1) + "vw";
-        document.getElementById("programlist").style.height = document.getElementById("htmlbody").offsetWidth >= 800 ?
+        document.getElementById("programlist").style.height = document.getElementById("pageContainer").offsetWidth >= 800 ?
         248 * Math.floor(i/2) + "px" : 31 * Math.floor(i/2) + "vw";
     }
 }
 
-ProgramList();
-window.onresize = ProgramList;
+layoutSkillsList();
+window.onresize = layoutSkillsList;
 
-function CreatemainList() {
+function generateTableOfContents() {
     let i = 1;
     while (true) {
-        let targetelem = document.getElementById("mainList" + i);
+        let targetelem = document.getElementById("tableOfContents" + i);
         if (targetelem == null) break;
 
         let targettext = targetelem.textContent;
         Displaymenu.insertAdjacentHTML("beforeend",
-            '<h6 id="Focus' + i + '" class="Displaymenutext">' + targettext + '</h6>'
+            '<h6 id="Focus' + i + '" class="focusText">' + targettext + '</h6>'
         );
         i++;
     }
 }
 
-CreatemainList();
+generateTableOfContents();
 
-const clickEvents = document.querySelectorAll(".click-event");
+const detailButtons = document.querySelectorAll(".detailButton");
 
-clickEvents.forEach(function(element, index) {
+detailButtons.forEach(function(element, index) {
     element.addEventListener("click", function() {
         console.log(element); // クリックされた要素
         console.log(index); // 要素のインデックス
-        htmlmenu.insertAdjacentHTML("afterbegin", '<iframe id="htmliframe" src="index.3_'+index+'.html"></iframe>');
-        menuback.style.display = "block";
+        modalContent.insertAdjacentHTML("afterbegin", '<iframe id="htmliframe" src="index.3_'+index+'.html"></iframe>');
+        modalBackground.style.display = "block";
 
-        document.addEventListener("scroll", Backmenu);
-        backtomenu.addEventListener("click", Backmenu);
+        document.addEventListener("scroll", closeMenu);
+        backtomenu.addEventListener("click", closeMenu);
         backmenuflag = true;
     });
 });
 
 let backmenuflag = false;
-function Backmenu() {
+function closeMenu() {
     if (backmenuflag) {
         htmliframe.remove();
-        menuback.style.display = "none";
+        modalBackground.style.display = "none";
 
-        document.removeEventListener("scroll", Backmenu);
-        backtomenu.removeEventListener("click", Backmenu);
+        document.removeEventListener("scroll", closeMenu);
+        backtomenu.removeEventListener("click", closeMenu);
         backmenuflag = false;
     }
 }
