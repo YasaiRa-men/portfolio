@@ -5,24 +5,6 @@ body {
     margin: auto;
 }
 
-p a {
-    background-color: rgb(190, 223, 234);
-    color: cornflowerblue;
-    transition: all 0.5s;
-    text-decoration: none;
-    font-weight: 300;
-    border-radius: 30%;
-}
-
-p a:hover {
-    background-color: rgba(190, 223, 234, 0);
-    color: rgb(74, 111, 179);
-    transition: all 0.5s;
-    text-decoration: none;
-    font-weight: 900;
-    border-radius: 30%;
-}
-
 .contactdiv {
     width: 100%;
     aspect-ratio: 13/2;
