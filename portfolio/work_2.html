@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(110, 142, 170);
+            font-size: 3vw;
+        }
+
+        div img {
+            position: absolute;
+            height: 100%;
+            aspect-ratio: 1/1;
+        }
+
+        .divfill {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/6;
+        }
+
+        .divfill p {
+            position: absolute;
+            background-color: rgb(137, 177, 211);
+            margin: 0px;
+            transform: translateY(-50%);
+        }
+
+        h3 {
+            background-color: azure;
+        }
+
+        h4 {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h3>・オーダー部分</h3>
+    <p>
+        注文画面は、M5Stackの左右のボタンで6種類ある寿司を
+        <br>選択できます。
+        <br>そして中央のボタンで注文が可能です。
+    </p>
+    <div class="divfill">
+        <img src="img/work/Sushinetack/M5Stack_tuna.png" style="top: 0px; left: 0px;">
+        <p style="top: 50%; left: 40%;">
+            寿司の画像も表示して一目見て
+            <br>分かりやすいようにしてあります。
+        </p>
+    </div>
+    <p>
+        寿司を注文すると、BLEDeviceのライブラリを利用して、
+        <br>もう一つのM5Stackにその情報を渡します。
+        <br>通信では文字列を送信し、その文字列によってどの寿司が注文されたのかを判定します。
+        <br>これにより、注文情報はもう一つのM5Stackに正確に伝えることが可能となっています。
+        <br>
+    </p>
+    <h3>・皿の周回判定</h3>
+    <p>
+        レーンを一定回周ったときにその皿を回収するために
+        <br>皿の周回判定を作らないといけないのですが、
+        <br>その判定方法を、
+        <br>RFIDシールを皿の裏に貼り付け、そのIDを読み取るために
+        <br>レーンの裏にRFIDリーダーを取り付け読み取るようにしました。
+    </p>
+    <div class="divfill">
+        <img src="img/work/Sushinetack/M5Stack_read.jpg" style="top: 0px; right: 0px;">
+        <p style="top: 50%; left: 0%;">RFIDタグの読み取りの実験の様子</p>
+    </div>
+    <p>
+        このように客から見えないところで処理を行うことで、
+        <br>見た目も損なわないようにしました。
+    </p>
+    <br>
+    <h4>下にスクロールしてもこのウィンドウは閉じます</h4>
+</body>
+</html>
