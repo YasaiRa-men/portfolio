@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(110, 142, 170);
+            font-size: 3vw;
+        }
+
+        div img {
+            position: absolute;
+            height: 100%;
+            aspect-ratio: 16/9;
+        }
+
+        .divfill {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/6;
+        }
+
+        .divfill p {
+            position: absolute;
+            background-color: rgb(137, 177, 211);
+            margin: 0px;
+            transform: translateY(-50%);
+        }
+
+        h4 {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p>Webなどを見ているときに出てくる広告から着想を得ました。</p>
+    <div class="divfill">
+        <img src="img/work/Tkinter/WindowBusters.jpg" style="top: 0px; left: 0px;">
+        <p style="top: 50%; left: 70%;">タイトル画面</p>
+    </div> 
+    <p>
+        最初の入力画面で、広告のウィンドウの数を入力します。
+        <br>スタートを押すと、タイトル画面が非表示になり、
+        <br>入力した数だけ広告が画面に表示されます。
+        <br>
+        <br>違いを出すために、広告ウィンドウの大きさや種類・文字が
+        <br>ランダムで出力されるように作りました。
+    </p>
+    <img src="img/work/Tkinter/ad_1.jpg" style="width: calc(100%/3 - 16px);">
+    <img src="img/work/Tkinter/ad_2.jpg" style="width: calc(100%/3 - 16px);">
+    <img src="img/work/Tkinter/ad_3.jpg" style="width: calc(100%/3 - 16px);">
+    <p>
+        広告を全て消すと、タイトル画面が再表示され、
+        <br>全て消すのにかかった時間も表示されます。
+    </p>
+    <div class="divfill">
+        <img src="img/work/Tkinter/WindowBusters-Score.jpg" style="top: 0px; left: 0px;">
+        <p style="top: 50%; left: 70%;">
+            直前にプレイした
+            <br>タイムが出ます。
+        </p>
+    </div> 
+    <br>
+    <h4>下にスクロールしてもこのウィンドウは閉じます</h4>
+</body>
+</html>
